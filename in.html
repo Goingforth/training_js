@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0,
+    user-scalable=no\";
+    <title>Temp Control</title>
+    <style>
+      html {
+        font-family: Helvetica;
+        display: inline-block;
+        margin: 0px auto;
+        text-align: center;
+      }
+      body {
+        margin-top: 50px;
+      }
+      h1 {
+        color: #444444;
+        margin: 50px auto 30px;
+      }
+      h3 {
+        color: #444444;
+        margin-bottom: 30px;
+      }
+      p {
+        color: red;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ESP8266 Web Server</h1>
+    ;
+    <h3>Using Access Point(AP) Mode</h3>
+    <h3>Температура</h3>
+    <!-- <div id="text_out__temp">
+      <p id="text_change__temp">Температура</p>
+  </div>
+   <h3>Время работы</h3>
+  <div id="text_out__time">
+      <p id="text_change__time">Время работы</p>
+  </div> -->
+    <div id="text_out">
+      <p id="text_change__temp">Температура</p>
+    </div>
+    <h3>Время работы</h3>
+    <div id="text_out">
+      <p id="text_change__time">Время работы</p>
+    </div>
+    <!-- <script>
+      let i = 0;
+      function text_out__temp() {
+        let p;
+        p = document.getElementById("text_change__temp");
+        p.innerHTML = `Температуру заменили ${i} раз`;
+        i += 1;
+      }
+      setInterval(text_out__temp, 5000);
+    </script>
+    <script>
+      let c = 0;
+      function text_out__time() {
+        let p;
+        p = document.getElementById("text_change__time");
+        p.innerHTML = `Время заменили ${c} раз`;
+        c += 1;
+      }
+      setInterval(text_out__time, 2000);
+         </script> -->
+    <script>
+      let c = 0;
+      let temp = 155;
+      let countdown = 400;
+      function text_out(temp, countdown) {
+        let b;
+        b = document.getElementById("text_change__temp");
+        b.innerHTML = `Температуру заменили ${c} раз . Значение температуры ${temp}`;
+        let t;
+        t = document.getElementById("text_change__time");
+        t.innerHTML = `Время заменили ${c} раз . Значение времени ${countdown}`;
+        c += 1;
+      }
+      setInterval(function () {
+        text_out(temp, countdown);
+      }, 2000);
+    </script>
+  </body>
+</html>
